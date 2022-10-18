@@ -28,9 +28,9 @@ public class PessoaController {
         return ResponseEntity.status(HttpStatus.CREATED).body(this.pessoaService.create(pessoaRequest));
     }
 
-    @ApiOperation(value = "atualizar videos")
+    @ApiOperation(value = "atualizar pessoa")
     @PatchMapping("/{pessoaId}")
-    public ResponseEntity<PessoaResponse> update(@PathVariable("pessoaId") Long pessoaId, PessoaUpdateRequest pessoaUpdateRequest){
+    public ResponseEntity<PessoaResponse> update(@PathVariable("pessoaId") Long pessoaId, @RequestBody PessoaUpdateRequest pessoaUpdateRequest){
         return ResponseEntity.status(HttpStatus.CREATED).body(this.pessoaService.update(pessoaId, pessoaUpdateRequest));
     }
 
